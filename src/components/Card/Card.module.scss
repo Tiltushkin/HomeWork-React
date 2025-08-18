@@ -5,20 +5,21 @@
   flex-direction: column;
   background-color: $card-bg-color;
   color: $card-text-color;
-  border-radius: 12px;
-  width: 400px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 360px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
 
   &:hover {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
   }
 }
 
 .image {
   width: 100%;
-  height: 250px;
+  height: 220px;
   object-fit: cover;
 }
 
@@ -26,20 +27,19 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 20px;
-  flex-grow: 1;
+  gap: 16px;
 }
 
 .title {
   font-size: $standard-font-title-size;
   font-weight: $standard-font-title-weight;
   text-align: center;
+  color: #e2e8f0;
 }
 
 .description {
   font-size: $standard-font-size;
-  line-height: 1.4;
-  color: #ccc;
+  color: #cbd5e1;
   text-align: center;
+  line-height: 1.5;
 }

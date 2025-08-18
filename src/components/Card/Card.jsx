@@ -2,12 +2,12 @@ import React from 'react';
 import s from './Card.module.scss';
 import Button from "../../UI/Buttons/Button.jsx";
 
-function Card({ title, content, onClick }) {
+function Card({ title, content, onClick, src }) {
     return (
         <div className={s.card}>
             <img
                 className={s.image}
-                src="https://static.nix.ru/art/pic/web_news/2024/apr/ps1714229143.jpg"
+                src={src}
                 alt="Product"
                 loading="lazy"
             />
