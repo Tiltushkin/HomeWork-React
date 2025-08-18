@@ -15,7 +15,7 @@ function Card({ title, content, onClick, src, price }) {
                 <h3 className={s.title}>{title}</h3>
                 <p className={s.description}>{content}</p>
                 <p className={s.price}>{price}</p>
-                <Button text="Buy" onClick={onClick} />
+                <Button onClick={onClick}>Buy</Button>
             </div>
         </div>
     );
