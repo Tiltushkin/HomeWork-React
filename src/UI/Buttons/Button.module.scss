@@ -1,0 +1,20 @@
+@use '../../styles/variables' as *;
+
+.wrapper {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #a8ff78, #78ffd6);
+  border-radius: 8px;
+  color: #222;
+  font-size: $standard-font-size;
+  font-weight: $standard-font-title-weight;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: none;
+  width: 100%;
+
+  &:hover {
+    cursor: pointer;
+    background: linear-gradient(135deg, #78ffd6, #a8ff78);
+    transform: scale(1.02);
+  }
+}

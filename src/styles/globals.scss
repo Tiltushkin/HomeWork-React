@@ -1,0 +1,33 @@
+@use './variables' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-size: $standard-font-size;
+  font-weight: $standard-font-weight;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: $bg-color;
+  overflow-x: hidden;
+}
+
+.box {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100px;
+  padding: 20px;
+}
+
+.goods {
+  color: $card-text-color;
+  font-size: $standard-font-title-size;
+  font-weight: $standard-font-title-weight;
+  position: relative;
+  left: 300px;
+  top: 30px;
+}
