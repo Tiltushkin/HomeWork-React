@@ -37,9 +37,13 @@
   color: #e2e8f0;
 }
 
-.description {
+.description, .price {
   font-size: $standard-font-size;
   color: #cbd5e1;
   text-align: center;
   line-height: 1.5;
+}
+
+.price {
+  font-weight: 600;
 }
