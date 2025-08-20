@@ -1,0 +1,16 @@
+@use '../../styles/variables' as *;
+
+.wrapper {
+    width: 200px;
+    height: 35px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 18px;
+    padding-left: 10px;
+    background-color: $bg-color2;
+}
+
+.input_one {
+    width: 250px;
+}
