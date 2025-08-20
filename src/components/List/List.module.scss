@@ -1,0 +1,16 @@
+@use '../../styles/variables' as *;
+
+.list {
+    list-style-type: none;
+    background-color: white;
+    width: fit-content;
+    padding: $margin-m;
+    display: flex;
+    flex-direction: column;
+    gap: $margin-m;
+}
+
+.item {
+    border-bottom: 1px solid black;
+    color: black;
+}
