@@ -1,9 +1,14 @@
 import React from 'react';
 import s from './Button.module.scss'
+import cn from "classnames"
 
-function Button({ onClick, children }) {
+function Button({ onClick, disabled, children }) {
     return (
-        <button className={ s.wrapper } onClick={ onClick }>{children}</button>
+        <button
+            disabled={ disabled }
+            className={cn(s.wrapper, { [s.dis]: disabled })}
+            onClick={ onClick }>{children}
+        </button>
     )
 }
 

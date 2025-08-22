@@ -18,3 +18,13 @@
     transform: scale(1.03);
   }
 }
+
+.dis {
+  background-color: $accent-color-dis;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $accent-hover-dis;
+    transform: scale(1.03);
+  }
+}
