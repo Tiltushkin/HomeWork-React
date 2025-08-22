@@ -1,6 +1,7 @@
 import './styles/globals.scss';
 import MainLayout from './layouts/MainLayout.jsx';
 import Registration from './components/Registration/Registration.jsx';
+import ExampleUseEffect from './components/hookExamples/ExampleUseEffect/ExampleUseEffect.jsx';
 
 function App() {
 
@@ -10,7 +11,8 @@ function App() {
 
     return (
         <MainLayout>
-            <Registration onSubmit={testReg} />
+            {/* <Registration onSubmit={testReg} /> */}
+            <ExampleUseEffect />
         </MainLayout>
   );
 }
