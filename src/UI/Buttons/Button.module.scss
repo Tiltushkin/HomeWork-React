@@ -23,7 +23,7 @@
   background-color: $accent-color-dis;
 
   &:hover {
-    cursor: pointer;
+    cursor: not-allowed;
     background-color: $accent-hover-dis;
     transform: scale(1.03);
   }
