@@ -1,10 +1,10 @@
+import ListFiltered from './components/ListFiltered/ListFiltered';
 import './styles/globals.scss';
-import Clicker from './components/Clicker/Clicker.jsx';
 
 function App() {
 
     return (
-        <Clicker />
+        <ListFiltered />
     );
 }
 
