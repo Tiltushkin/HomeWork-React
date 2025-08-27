@@ -1,0 +1,18 @@
+@use '../../styles/variables' as *;
+
+.wrapper {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    max-width: 85vw;
+    width: max-content;
+    height: auto;
+    padding: 25px;
+}
