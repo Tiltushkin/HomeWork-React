@@ -13,16 +13,8 @@ body {
   overflow-x: hidden;
 }
 
-.box {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-.goods {
-  font-size: 32px;
-  font-weight: 700;
-  text-align: center;
-  margin-top: 40px;
-  color: #e2e8f0;
+.main_wrapper {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
 }

@@ -1,0 +1,58 @@
+@use '../../styles/variables' as *;
+
+.card {
+    position: relative;
+    width: fit-content;
+    height: auto;
+    background-color: $bg-color2;
+    border-radius: 12px;
+    padding: 15px;
+    transition: transform 0.35s ease-in-out;
+    &__title {
+        font-size: 32px;
+        font-weight: 600;
+        max-width: 300px;
+        text-wrap: wrap;
+    }
+
+    &__description {
+        font-size: 20px;
+        font-weight: 400;
+        max-width: 500px;
+        text-wrap: wrap;
+    }
+
+    &__sold {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -10px;
+        font-size: 42px;
+        font-weight: 600;
+        color: rgb(135, 3, 3);
+    }
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.highlighted {
+    background-color: $accent-color;
+    border: 2px solid $accent-hover-dis;
+    box-shadow: 0 0 8px 1px $accent-hover;
+}
+
+.withImage {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+.sold {
+    background-color: rgba(0, 0, 0, 0.75);
+    box-shadow: none !important;
+    color: white !important;
+}
