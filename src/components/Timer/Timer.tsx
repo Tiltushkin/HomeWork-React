@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import '../../styles'
 import s from './Timer.module.scss';
 
 function Timer() {

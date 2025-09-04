@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Timer from './components/Timer/Timer';
 import UsersList from './components/UsersList/UsersList';
 import RenderCounter from './components/RenderCounter/RenderCounter';
+import './styles'
 import s from './App.module.scss';
 
 function App() {

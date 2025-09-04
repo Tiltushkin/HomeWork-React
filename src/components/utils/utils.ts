@@ -57,8 +57,8 @@ const utils = {
   random: (x, y) => { 
   return y ? Math.round(Math.random() * (y - x)) + x : Math.round(Math.random() * x); 
   }, 
-  pick: (array) => { 
-  return array[utils.random(array.length - 1)]; 
+  pick: (array) => {
+  return array[utils.random(0, array.length - 1)]; 
   } 
 }
 

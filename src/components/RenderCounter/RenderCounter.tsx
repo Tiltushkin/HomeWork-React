@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import '../../styles'
 import s from './RenderCounter.module.scss';
 
 function RenderCounter() {
