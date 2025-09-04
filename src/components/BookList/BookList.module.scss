@@ -1,0 +1,182 @@
+@use "../../styles/variables" as *;
+
+.wrapper {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.counters {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.badge,
+.badgeSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  line-height: 1;
+  background: rgba(241, 245, 249, 0.08);
+  border: 1px solid rgba(241, 245, 249, 0.12);
+}
+
+.badgeSecondary {
+  opacity: 0.9;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(241, 245, 249, 0.08);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+}
+
+.field {
+  grid-column: span 12;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  label {
+    font-size: 12px;
+    opacity: 0.9;
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(241, 245, 249, 0.12);
+    background: #0b1224;
+    color: $card-text-color;
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+
+    &:focus {
+      border-color: rgba(148, 163, 184, 0.6);
+      box-shadow: 0 0 0 3px rgba(148, 163, 184, 0.15);
+    }
+  }
+}
+
+.rangeRow {
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.warning {
+  grid-column: span 12;
+  font-size: 13px;
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.12);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+
+.actions {
+  grid-column: span 12;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.resetBtn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(241, 245, 249, 0.18);
+  background: transparent;
+  color: $card-text-color;
+  cursor: pointer;
+  transition: transform .06s ease, background .2s ease, border-color .2s ease;
+
+  &:hover {
+    background: rgba(255,255,255,0.05);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px;
+  list-style: none;
+}
+
+.card {
+  grid-column: span 12;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(241, 245, 249, 0.08);
+  border-radius: 16px;
+  padding: 14px;
+  transition: transform .1s ease, border-color .2s ease, background .2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: rgba(241, 245, 249, 0.14);
+    background: rgba(255,255,255,0.03);
+  }
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.pages {
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(148,163,184,0.12);
+  border: 1px solid rgba(148,163,184,0.25);
+}
+
+.empty {
+  grid-column: span 12;
+  padding: 18px 14px;
+  text-align: center;
+  opacity: 0.8;
+  border: 1px dashed rgba(241, 245, 249, 0.18);
+  border-radius: 14px;
+}
