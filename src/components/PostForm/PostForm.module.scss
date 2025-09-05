@@ -1,0 +1,49 @@
+@use "../../styles/variables" as *;
+
+.form {
+    display: grid; gap: 12px;
+}
+
+.row {
+    display: grid; gap: 8px;
+}
+
+.label {
+    font-size: 13px; opacity: .9;
+}
+
+.input, .textarea {
+    width: 100%;
+    background: #0f172a;
+    color: $card-text-color;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 14px;
+}
+
+.textarea {
+    min-height: 140px; resize: vertical;
+}
+
+.actions {
+    display: flex; gap: 8px; justify-content: flex-end; margin-top: 6px;
+}
+
+.btn {
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    background: #0f172a;
+    color: $card-text-color;
+    font-size: 14px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.btnPrimary {
+    background: linear-gradient(180deg,#1e293b,#0f172a); border-color: rgba(59,130,246,.45);
+}
+
+.btnGhost {
+    background: transparent;
+}
