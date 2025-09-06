@@ -1,29 +1,238 @@
 @use "./styles/variables" as *;
 
 .container {
-  width: min(1100px, 100%);
-  margin: 0 auto;
-  padding: 32px 16px 64px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 16px 56px;
 }
 
-.btn {
-  border: 1px solid rgba(148, 163, 184, 0.25);
-  background: #0f172a;
-  color: $card-text-color;
-  font-size: 14px;
-  padding: 10px 14px;
-  border-radius: 12px;
-  cursor: pointer;
+.header {
+    margin-bottom: 20px;
+
+    h1 {
+        font-size: 28px;
+        line-height: 1.2;
+        color: $card-text-color;
+        letter-spacing: 0.2px;
+        margin-bottom: 6px;
+    }
+
+    p {
+        opacity: 0.7;
+        font-size: 14px;
+    }
+
+    code {
+        background: rgba(255,255,255,0.06);
+        padding: 2px 6px;
+        border-radius: 6px;
+        border: 1px solid rgba(255,255,255,0.08);
+    }
 }
 
-.btnPrimary {
-    background: linear-gradient(180deg,#1e293b,#0f172a); border-color: rgba(59,130,246,.45);
+.controls {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin: 20px 0 22px;
+
+    @media (max-width: 940px) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @media (max-width: 540px) {
+        grid-template-columns: 1fr;
+    }
 }
 
-.btnGhost {
-    background: transparent;
+.control {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.btnDanger {
-    border-color: rgba(239,68,68,.45);
+.label {
+    font-size: 12px;
+    opacity: 0.7;
+    letter-spacing: 0.3px;
+}
+
+.select {
+    appearance: none;
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.06);
+    color: $card-text-color;
+    border: 1px solid rgba(255,255,255,0.12);
+    outline: none;
+    transition: 0.2s ease;
+
+    &:hover {
+        border-color: rgba(255,255,255,0.2);
+    }
+    &:focus {
+        border-color: rgba(255,255,255,0.35);
+        box-shadow: 0 0 0 4px rgba(59,130,246,0.18);
+    }
+}
+
+.segmented {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+
+    .segment:nth-child(3) {
+        grid-column: auto / auto;
+    }
+}
+
+.segment {
+    padding: 10px 12px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: $card-text-color;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    font-size: 14px;
+
+    &:hover {
+        border-color: rgba(255,255,255,0.2);
+        transform: translateY(-1px);
+    }
+
+    &.active {
+        background: linear-gradient(180deg, rgba(59,130,246,0.22), rgba(59,130,246,0.14));
+        border-color: rgba(59,130,246,0.45);
+    }
+}
+
+.resetWrap {
+    align-self: end;
+}
+
+.resetBtn {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, rgba(148,163,184,0.25), rgba(148,163,184,0.12));
+    color: $card-text-color;
+    border: 1px solid rgba(148,163,184,0.35);
+    cursor: pointer;
+    transition: 0.2s ease;
+    font-weight: 600;
+
+    &:hover {
+        transform: translateY(-1px);
+        border-color: rgba(148,163,184,0.55);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+.state {
+    display: grid;
+    place-items: center;
+    gap: 10px;
+    padding: 26px;
+    opacity: 0.9;
+
+    &.error {
+        color: #fca5a5;
+    }
+}
+
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,0.2);
+    border-top-color: rgba(255,255,255,0.7);
+    border-radius: 50%;
+    animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+
+    @media (max-width: 1024px) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @media (max-width: 620px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 14px;
+    min-height: 96px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: 0.2s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+
+    &:hover {
+        transform: translateY(-2px);
+        border-color: rgba(255,255,255,0.18);
+    }
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.status {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid transparent;
+
+    &.done {
+        color: #34d399;
+        background: rgba(16,185,129,0.15);
+        border-color: rgba(16,185,129,0.35);
+    }
+    &.todo {
+        color: #fbbf24;
+        background: rgba(251,191,36,0.12);
+        border-color: rgba(251,191,36,0.35);
+    }
+}
+
+.badges {
+    display: flex;
+    gap: 6px;
+}
+
+.badge {
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 8px;
+    background: rgba(148,163,184,0.15);
+    border: 1px solid rgba(148,163,184,0.3);
+    color: $card-text-color;
+}
+
+.title {
+    font-size: 15px;
+    line-height: 1.35;
+    color: $card-text-color;
 }
