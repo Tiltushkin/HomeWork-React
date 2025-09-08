@@ -1,0 +1,41 @@
+.ap_main_wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.ap_h2, .ap_p {
+    color: rgba(255, 255, 255, 0.85);
+    position: relative;
+    left: 50px;
+}
+
+.ap_h2 {
+    font-size: 32px;
+    font-weight: 600;
+    top: 50px;
+}
+
+.ap_p {
+    font-size: 24px;
+    font-weight: 500;
+    top: 100px;
+}
+
+.ap_button {
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: 500;
+    transition: transform 0.35s ease-in-out;
+    position: relative;
+    left: 50px;
+    top: 150px;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+}

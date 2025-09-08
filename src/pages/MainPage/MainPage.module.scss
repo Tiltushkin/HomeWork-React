@@ -1,10 +1,4 @@
-@use "./styles/variables" as *;
-
-.main_wrapper {
-  position: relative;
-  width: 100vw;
-  min-height: 100vh;
-}
+@use "../../styles/variables" as *;
 
 .container {
     max-width: 1100px;
