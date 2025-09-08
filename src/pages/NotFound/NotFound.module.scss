@@ -1,0 +1,33 @@
+.nf_main_wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.nf_h2 {
+    font-size: 54px;
+    color: rgba(255, 255, 255, 0.85);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 150px;
+}
+
+.nf_button {
+    position: absolute;
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: 500;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 300px;
+    transition: transform 0.35s ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+        transform: translateX(-50%) scale(1.1);
+    }
+}
