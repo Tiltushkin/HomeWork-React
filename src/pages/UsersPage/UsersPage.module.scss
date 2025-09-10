@@ -395,3 +395,170 @@
   background: rgba(255,255,255,0.12);
   font-weight: 700;
 }
+
+.up_addBtn {
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)),
+    rgba(255,255,255,.04);
+  color: $card-text-color;
+  cursor: pointer;
+  transition: transform .15s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
+  box-shadow: 0 8px 22px rgba(0,0,0,.22);
+
+  &:hover {
+    transform: translateY(-1px);
+    border-color: rgba(255,255,255,0.28);
+    background:
+      linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04)),
+      rgba(255,255,255,.06);
+  }
+}
+
+.up_addBtnActive {
+  border-color: rgba(255,255,255,0.35);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.06)),
+    rgba(255,255,255,.12);
+  font-weight: 700;
+}
+
+/* Форма добавления пользователя */
+.up_form {
+  margin: 14px 0 20px;
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.035);
+  border: 1px dashed rgba(255,255,255,0.14);
+  display: grid;
+  gap: 12px;
+}
+
+.up_formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+
+  @media (max-width: 820px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.up_field {
+  display: grid;
+  gap: 6px;
+
+  label {
+    font-size: 12px;
+    opacity: .8;
+  }
+}
+
+.up_input {
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+  color: $card-text-color;
+  padding: 0 10px;
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease;
+
+  &::placeholder { opacity: .6; }
+
+  &:focus {
+    border-color: rgba(255,255,255,0.22);
+    box-shadow: 0 0 0 3px rgba(148,163,184,.18);
+  }
+}
+
+.up_formActions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+
+  @media (max-width: 820px) {
+    justify-content: stretch;
+  }
+}
+
+.up_submitBtn,
+.up_cancelBtn {
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.06);
+  color: $card-text-color;
+  cursor: pointer;
+  transition: transform .15s ease, border-color .2s ease, background .2s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    border-color: rgba(255,255,255,0.26);
+    background: rgba(255,255,255,0.08);
+  }
+
+  &:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+.up_submitBtn {
+  border-color: rgba(255,255,255,0.28);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06)),
+    rgba(255,255,255,.10);
+  font-weight: 700;
+}
+
+.up_cancelBtn {
+  border-style: dashed;
+}
+
+.up_head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.up_actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.up_deleteBtn {
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(252, 165, 165, 0.45);
+  background:
+    linear-gradient(180deg, rgba(252,165,165,.12), rgba(252,165,165,.06)),
+    rgba(252,165,165,.08);
+  color: $card-text-color;
+  cursor: pointer;
+  transition: transform .15s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    border-color: rgba(252,165,165,.65);
+    background:
+      linear-gradient(180deg, rgba(252,165,165,.18), rgba(252,165,165,.10)),
+      rgba(252,165,165,.12);
+    box-shadow: 0 10px 24px rgba(0,0,0,.22);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(252,165,165,.25);
+  }
+
+  &:active { transform: translateY(0); }
+}

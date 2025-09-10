@@ -3,6 +3,9 @@ import s from './UserPage.module.scss';
 import { Link, useParams } from 'react-router-dom';
 import useUsers, { User } from '../../shared/hooks/useUsers';
 import { Address } from '../../features/Users/types'
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../../store/store';
+import { selectAllUsers } from '../../slices/usersSlice';
 
 type Company = { name: string; catchPhrase: string; bs: string };
 type FullUser = Omit<User, 'address' | 'company'> & { address: Address; company: Company };
@@ -16,7 +19,10 @@ const mapHrefOf = (lat?: string, lng?: string) =>
 
 const UserPage: React.FC = () => {
   const { id} = useParams<{ id: string }>();
-  const { users, loading, error } = useUsers();
+  const { loading, error } = useUsers();
+
+  const users = useSelector((state: RootState) => selectAllUsers(state))
+
   const typed = users as unknown as FullUser[];
 
   const userId = Number(id);
