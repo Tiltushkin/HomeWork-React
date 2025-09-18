@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import s from './UsersPage.module.scss';
 import useUsers from '../../shared/hooks/useUsers';
-import type { FullUser } from '../../features/users/types';
+import type { FullUser, FullUserDiary } from '../../features/users/types';
 import { useUserFilters } from '../../shared/hooks/useUserFilters';
 import { usePagination } from '../../shared/hooks/usePagination';
 import { UserCard } from '../../components/UserCard/UserCard';
@@ -9,7 +9,7 @@ import { UsersToolbar } from '../../components/UsersToolbar/UsersToolbar';
 import { PaginationBar } from '../../components/PaginationBar/PaginationBar';
 import { useDispatch, useSelector } from 'react-redux';
 import { type AppDispatch, RootState } from '../../store/store';
-import { addUser, deleteUser, selectAllUsers } from '../../slices/usersSlice';
+import { addUser, deleteUser, selectAllUsers, updateUser } from '../../slices/usersSlice';
 
 const UsersPage: React.FC = () => {
   const { loading, error } = useUsers();
@@ -74,6 +74,10 @@ const UsersPage: React.FC = () => {
     setNewStreet('');
     setNewCompanyName('');
     setShowForm(false);
+  };
+
+  const handleUpdateUser = (id: number, changes: Partial<FullUser>) => {
+    dispatch(updateUser({ id, changes: changes as Partial<FullUserDiary> }));
   };
 
   const handleDeleteUser = (userId: number) => {
@@ -251,7 +255,7 @@ const UsersPage: React.FC = () => {
         <>
           <ul className={s.up_grid}>
             {pageItems.map((u) => (
-              <UserCard key={u.id} user={u} onDelete={handleDeleteUser} />
+              <UserCard key={u.id} user={u} onDelete={handleDeleteUser} onUpdate={handleUpdateUser} />
             ))}
           </ul>
           <PaginationBar page={clampedPage} setPage={setPage} totalPages={totalPages} />
